@@ -6,18 +6,30 @@ import { useEffect, useState } from "react"
 function App() {
   let router = createBrowserRouter(ROUTES)
   let [user,setUser] = useState({})
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isEditUserModalOpen, setIsEditUserModalOpen] = useState(false);
+  const [isEditPasswordModalOpen, setIsEditPasswordModalOpen] = useState(false);
 
-  const showModal = () => {
-    setIsModalOpen(true);
+  const showEditModal = () => {
+    setIsEditUserModalOpen(true);
   };
 
-  const handleOk = () => {
-    setIsModalOpen(false);
+  const handleEditOk = () => {
+    setIsEditUserModalOpen(false);
   };
 
-  const handleCancel = () => {
-    setIsModalOpen(false);
+  const handleEditCancel = () => {
+    setIsEditUserModalOpen(false);
+  };
+  const showEditPasswordModal = () => {
+    setIsEditPasswordModalOpen(true);
+  };
+
+  const handleEditPasswordOk = () => {
+    setIsEditPasswordModalOpen(false);
+  };
+
+  const handleEditPasswordCancel = () => {
+    setIsEditPasswordModalOpen(false);
   };
 
   useEffect(()=>{
@@ -30,10 +42,14 @@ function App() {
   let data={
     user,
     setUser,
-    isModalOpen,
-    showModal,
-    handleCancel,
-    handleOk
+    isEditUserModalOpen,
+    isEditPasswordModalOpen,
+    showEditModal,
+    handleEditCancel,
+    handleEditOk,
+    showEditPasswordModal,
+    handleEditPasswordCancel,
+    handleEditPasswordOk
   }
   return (
     <MainData.Provider value={data}>

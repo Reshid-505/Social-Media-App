@@ -4,9 +4,10 @@ import MainData from "../../context/mainContext"
 import {useNavigate} from "react-router-dom"
 import UserEditModal from "../../components/UserEditModal"
 import { LockOutlined } from '@ant-design/icons';
+import UserPasswordEditModal from "../../components/UserPasswordEditModal"
 
 function User() {
-  let {user,showModal} = useContext(MainData)
+  let {user,showEditModal,showEditPasswordModal} = useContext(MainData)
   let navigate = useNavigate()
 
   useEffect(()=>{
@@ -41,11 +42,13 @@ function User() {
               {user?.bio}
             </div>
           </div>
-          <Button onClick={showModal} style={{background:"#FCB010",borderColor:"#FCB010",color:"#212529",marginTop:"20px"}} >Edit</Button>
+          <Button onClick={showEditModal} style={{background:"#FCB010",borderColor:"#FCB010",color:"#212529",marginTop:"20px"}} >Edit</Button>
+          <Button onClick={showEditPasswordModal} style={{background:"#FCB010",borderColor:"#FCB010",color:"#212529",marginTop:"20px"}} >Change password</Button>
         </div>
         
       </div>
       <UserEditModal />
+      <UserPasswordEditModal />
     </>
   )
 }

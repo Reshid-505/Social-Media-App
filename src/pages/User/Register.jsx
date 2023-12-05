@@ -36,7 +36,7 @@ function Register() {
                 requests: [],
                 isAdmin: false,
                 isVerified: false,
-                isPrivite: values.private,
+                isPrivate: values.private,
                 email: values.eamil,
                 posts: [],
                 fullname: values.fullname?values.fullname:"",
@@ -82,10 +82,13 @@ function Register() {
               label="Username"
               name="username"
               rules={[
-                  {
-                  required: true,
-                  min:3,
+                 {
+                  required:true,
                   message: 'Please input your username!',
+                  },
+                  {
+                  min:3,
+                  message: 'Username must be more than 3 characters!',
                   },
               ]}
               >
@@ -96,10 +99,13 @@ function Register() {
               label="Email"
               name="email"
               rules={[
-                  {
-                  required: true,
-                  pattern:/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/g,
+                {
+                  required:true,
                   message: 'Please input your email!',
+                  },
+                  {
+                  pattern:/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/g,
+                  message: 'Please input valid email!',
                   },
               ]}
               >
@@ -110,10 +116,13 @@ function Register() {
               label="Password"
               name="password"
               rules={[
-                  {
-                  required: true,
-                  pattern:/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/g,
+                {
+                  required:true,
                   message: 'Please input your password!',
+                  },
+                  {
+                  pattern:/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/g,
+                  message: 'Password must contain 0ne letter and one number and must be more than 6 character!',
                   },
               ]}
               >
@@ -124,10 +133,14 @@ function Register() {
               label="Confirm password"
               name="confirmPassword"
               rules={[
+                {
+                  required:true,
+                  message: 'Please input confirm your password!',
+                  },
                   {
                   required: true,
                   validator:(rule,value)=>value==password?Promise.resolve() : Promise.reject(new Error('Should accept agreement')),
-                  message: 'Please confirm your password!',
+                  message: 'Your password must be same!',
                   },
               ]}
               >
