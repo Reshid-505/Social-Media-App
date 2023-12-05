@@ -1,7 +1,6 @@
 body{
     background-color: #212529;
     color: #FFFFFF;
-    /* cursor: url("https://img.itch.zone/aW1hZ2UvODc2ODg2LzQ5MzQyNTUucG5n/original/QEYjKR.png"), auto; */
 }
 :where(.css-dev-only-do-not-override-6j9yrn).ant-form-item .ant-form-item-label >label{
     color: #FFFFFF;

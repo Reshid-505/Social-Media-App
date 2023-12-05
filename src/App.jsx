@@ -6,6 +6,20 @@ import { useEffect, useState } from "react"
 function App() {
   let router = createBrowserRouter(ROUTES)
   let [user,setUser] = useState({})
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
+
   useEffect(()=>{
     if(JSON.parse(localStorage.getItem("user"))){
       setUser(JSON.parse(localStorage.getItem("user")))
@@ -15,7 +29,11 @@ function App() {
   },[])
   let data={
     user,
-    setUser
+    setUser,
+    isModalOpen,
+    showModal,
+    handleCancel,
+    handleOk
   }
   return (
     <MainData.Provider value={data}>

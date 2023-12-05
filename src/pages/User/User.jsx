@@ -1,9 +1,12 @@
 import { useContext, useEffect } from "react"
+import { Button } from "antd"
 import MainData from "../../context/mainContext"
 import {useNavigate} from "react-router-dom"
+import UserEditModal from "../../components/UserEditModal"
+import { LockOutlined } from '@ant-design/icons';
 
 function User() {
-  let {user} = useContext(MainData)
+  let {user,showModal} = useContext(MainData)
   let navigate = useNavigate()
 
   useEffect(()=>{
@@ -19,7 +22,7 @@ function User() {
             <img src={user?.avatar} alt="avatar" style={{width:"100px",height:"100px",borderRadius:"50%"}} />
           </div>
           <div className="info">
-            <h1>{user?.name}</h1> 
+            <h1>{user?.isPrivate?(<LockOutlined />):null}{user?.username}</h1> 
             <div className="stats" style={{margin:"20px 0",display:"flex",gap:"40px"}}>
               <div>
                 <h3>Posts</h3>
@@ -38,10 +41,11 @@ function User() {
               {user?.bio}
             </div>
           </div>
-          
+          <Button onClick={showModal} style={{background:"#FCB010",borderColor:"#FCB010",color:"#212529",marginTop:"20px"}} >Edit</Button>
         </div>
         
       </div>
+      <UserEditModal />
     </>
   )
 }

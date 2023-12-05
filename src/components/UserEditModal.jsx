@@ -1,25 +1,17 @@
-import { Button, Form, Checkbox, Input } from 'antd';
-import { addUser, getAllUsers } from '../../services/api/userRequests';
-import { useContext, useEffect, useState } from 'react';
-import MainData from '../../context/mainContext';
-import {useNavigate} from "react-router-dom"
+import { Modal, Input, Form, Checkbox, Button } from 'antd';
+import { useContext } from 'react';
+import { editUser, getAllUsers } from '../services/api/userRequests';
+import MainData from '../context/mainContext';
 import toast, { Toaster } from 'react-hot-toast';
 
-function Register() {
-    let {user}=useContext(MainData)
-    let navigate = useNavigate()
-    useEffect(()=>{
-      if(JSON.stringify(user)!="{}"){
-        navigate("/")
-      }
-    },[user])
-    let [password,setPassword] = useState("")
+function UserEditModal() {
+    let {user,setUser,isModalOpen,handleCancel,handleOk} = useContext(MainData)
     const onFinish = (values) => {
         getAllUsers()
         .then(datas=>{
             let count=0
             datas.forEach(item=>{
-              if(item.username==values.username || item.email==values.email){
+              if(item.username==values.username || item.email==values.email && item.id!=user.id){
                 count++
               }
             })
@@ -29,7 +21,7 @@ function Register() {
               console.log(values)
               let data={
                 username: values.username,
-                password: values.password,
+                password: user.password,
                 avatar:values.avatar?values.avatar:"https://pbs.twimg.com/profile_images/1815864260/lorem-ipsum-logo_400x400.jpeg",
                 followers: [],
                 follows: [],
@@ -43,10 +35,11 @@ function Register() {
                 bio:values.bio?values.bio:"",
                 stories: [],
             }
-            // console.log(data)
-              addUser(data).then(()=>{
-                  toast.success("your account is ready please login")
-                  navigate("/login")
+              editUser(user.id,data).then((data)=>{
+                  setUser((data))
+                  localStorage.setItem("user",JSON.stringify(data))
+                  toast.success("your account is edited")
+                  handleCancel()
                 })
             }
         })
@@ -54,11 +47,10 @@ function Register() {
       const onFinishFailed = (errorInfo) => {
         console.log('Failed:', errorInfo);
       };
-      
   return (
     <>
-        <div className='container'>
-          <div><Toaster/></div>
+      <Modal footer={null} title="Edit User" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
+      <div><Toaster/></div>
           <Form
               name="basic"
               labelCol={{
@@ -79,63 +71,32 @@ function Register() {
               autoComplete="off"
           >
               <Form.Item
-              label="Username"
+              label={<label style={{ color: "#212529" }}>Username</label>}
               name="username"
               rules={[
                   {
-                  required: true,
                   min:3,
                   message: 'Please input your username!',
                   },
               ]}
               >
-              <Input />
+              <Input defaultValue={user.username} />
               </Form.Item>
 
               <Form.Item
-              label="Email"
+              label={<label style={{ color: "#212529" }}>Email</label>}
               name="email"
               rules={[
                   {
-                  required: true,
                   pattern:/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/g,
                   message: 'Please input your email!',
                   },
               ]}
               >
-              <Input />
+              <Input defaultValue={user.email} />
               </Form.Item>
-
               <Form.Item
-              label="Password"
-              name="password"
-              rules={[
-                  {
-                  required: true,
-                  pattern:/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/g,
-                  message: 'Please input your password!',
-                  },
-              ]}
-              >
-              <Input.Password value={password} onChange={(e)=>{setPassword(e.target.value)}}  />
-              </Form.Item>
-
-              <Form.Item
-              label="Confirm password"
-              name="confirmPassword"
-              rules={[
-                  {
-                  required: true,
-                  validator:(rule,value)=>value==password?Promise.resolve() : Promise.reject(new Error('Should accept agreement')),
-                  message: 'Please confirm your password!',
-                  },
-              ]}
-              >
-              <Input.Password />
-              </Form.Item>
-
-              <Form.Item
-              label="Avatar"
+              label={<label style={{ color: "#212529" }}>Avatar</label>}
               name="avatar"
               rules={[
                 {
@@ -144,11 +105,11 @@ function Register() {
                 },
             ]}
               >
-              <Input />
+              <Input defaultValue={user.avatar} />
               </Form.Item>
 
               <Form.Item
-              label="Bio"
+              label={<label style={{ color: "#212529" }}>Bio</label>}
               name="bio"
               rules={[
                   {
@@ -157,11 +118,11 @@ function Register() {
                   },
               ]}
               >
-              <Input />
+              <Input defaultValue={user.bio} />
               </Form.Item>
 
               <Form.Item
-              label="Fullname"
+              label={<label style={{ color: "#212529" }}>Fullname</label>}
               name="fullname"
               rules={[
                   {
@@ -170,7 +131,7 @@ function Register() {
                   },
               ]}
               >
-              <Input />
+              <Input defaultValue={user.fullname} />
               </Form.Item>
 
               <Form.Item
@@ -181,26 +142,24 @@ function Register() {
                   span: 16,
                 }}
               >
-                <Checkbox style={{color:"#FFF"}}>Private</Checkbox>
+                <Checkbox defaultChecked={user.isPrivite} style={{color:"#212529"}}>Private</Checkbox>
               </Form.Item>
 
               <Form.Item
               wrapperCol={{
                   offset:6,
-                  span: 16,
+                  span: 24,
               }}
               >
-              <Button type="primary" htmlType="submit">
-                  Register
-              </Button>
+                <Button type="primary" htmlType="submit">
+                    Login
+                </Button>
               </Form.Item>
-
           </Form>
-          
-        </div>
-
+      </Modal>
     </>
+
   )
 }
 
-export default Register
+export default UserEditModal

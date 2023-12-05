@@ -13,9 +13,15 @@ export async function getByIdUser(id){
     .then(res=>{result=res.data})
     return result
 }
-export async function addUser(id,data){
+export async function addUser(data){
     let result;
-    await axios(BASE_URL+"/users/"+id,data)
+    await axios.post(BASE_URL+"/users",data)
+    .then(res=>{result=res.data})
+    return result
+}
+export async function editUser(id,data){
+    let result;
+    await axios.put(BASE_URL+"/users/"+id,data)
     .then(res=>{result=res.data})
     return result
 }
