@@ -6,13 +6,13 @@ import {useNavigate} from "react-router-dom"
 import toast, { Toaster } from 'react-hot-toast';
 
 function Register() {
-    let {user}=useContext(MainData)
+    let {token}=useContext(MainData)
     let navigate = useNavigate()
     useEffect(()=>{
-      if(JSON.stringify(user)!="{}"){
+      if(token){
         navigate("/")
       }
-    },[user])
+    },[token])
     let [password,setPassword] = useState("")
     const onFinish = (values) => {
         getAllUsers()
@@ -26,7 +26,6 @@ function Register() {
             if(count){
               toast.error("this name or email is already in use ")
             }else{
-              console.log(values)
               let data={
                 username: values.username,
                 password: values.password,
@@ -37,13 +36,12 @@ function Register() {
                 isAdmin: false,
                 isVerified: false,
                 isPrivate: values.private,
-                email: values.eamil,
+                email: values.email,
                 posts: [],
                 fullname: values.fullname?values.fullname:"",
                 bio:values.bio?values.bio:"",
                 stories: [],
             }
-            // console.log(data)
               addUser(data).then(()=>{
                   toast.success("your account is ready please login")
                   navigate("/login")

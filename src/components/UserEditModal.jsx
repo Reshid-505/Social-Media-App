@@ -12,7 +12,6 @@ function UserEditModal() {
         .then(datas=>{
             let count=0
             datas.forEach(item=>{
-              console.log(user.id,item.id)
               if((item.username==values.username || item.email==values.email) && item.id!=user.id){
                 count++
               }
@@ -38,8 +37,7 @@ function UserEditModal() {
             }
               editUser(user.id,data).then((data)=>{
                   setUser((data))
-                  localStorage.setItem("user",JSON.stringify(data))
-                  toast.success("your account is edited")
+                  // toast.success("your account is edited")
                   handleEditCancel()
                 })
             }

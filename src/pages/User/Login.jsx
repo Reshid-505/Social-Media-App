@@ -6,21 +6,22 @@ import {useNavigate} from "react-router-dom"
 import toast, { Toaster } from 'react-hot-toast';
 
 function Login() {
-    let {user,setUser}=useContext(MainData)
+    let {token,setToken}=useContext(MainData)
     let navigate = useNavigate()
     useEffect(()=>{
-      if(JSON.stringify(user)!="{}"){
+      if(token){
         navigate("/")
       }
-    },[user])
+    },[token])
     const onFinish = (values) => {
         getAllUsers()
         .then(datas=>{
             let count=0
             datas.forEach(item=>{
               if(item.username==values.username && item.password==values.password){
-                setUser(item)
-                localStorage.setItem("user",JSON.stringify(item))
+
+                setToken(item.id)
+                localStorage.setItem("token",JSON.stringify(item.id))
                 navigate("/")
               }else{
                 count++

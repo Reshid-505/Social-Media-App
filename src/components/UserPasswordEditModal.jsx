@@ -9,7 +9,6 @@ function UserPasswordEditModal() {
     const { darkAlgorithm } = theme;
     let [password,setPassword] = useState("")
     const onFinish = (values) => {
-      // console.log(values)
         let data={
             username: user.username,
             password: values.password,
@@ -28,12 +27,12 @@ function UserPasswordEditModal() {
         }
         editUser(user.id,data).then((data)=>{
             setUser((data))
-            localStorage.setItem("user",JSON.stringify(data))
-            toast.success("your account is edited")
+            // toast.success("your account is edited")
             handleEditPasswordCancel()
         })
     }
       const onFinishFailed = (errorInfo) => {
+        toast.success("Failed!")
         console.log('Failed:', errorInfo);
       };
   return (
