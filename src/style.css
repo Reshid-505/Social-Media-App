@@ -121,7 +121,7 @@ header .buttons{
 }
 .post{
     border-radius: 10px;
-    margin-top: 200px;
+    margin-top: 100px;
     padding: 5px 0;
     background-color: #1E2225;
     width: 50%;
@@ -136,8 +136,16 @@ header .buttons{
     aspect-ratio: 1/1;
     object-fit: cover;
 }
-.post .post-footer{
-    padding: 10px 10px;
+.post .post-footer {
+    padding: 10px;
+}
+.post .post-footer .buttons{
+    display: flex;
+    gap: 13px;
+    font-size: 26px;
+}
+.post .post-footer .desc{
+    padding: 10px 0;
 }
 
 

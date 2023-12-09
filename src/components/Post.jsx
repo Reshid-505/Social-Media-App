@@ -1,6 +1,7 @@
 import {PropTypes} from "prop-types"
 import { useContext } from "react"
 import MainData from "../context/mainContext"
+import { HeartOutlined, HeartFilled, CommentOutlined } from '@ant-design/icons';
 function Post({postData}) {
     let {user} = useContext(MainData)
   return (
@@ -14,7 +15,16 @@ function Post({postData}) {
             <img src={postData.image} alt=""/>
         </div>
         <div className="post-footer">
+            <div className="buttons">
+              {postData.isLiked?
+              <HeartFilled style={{color:"#F31212"}} />:
+              <HeartOutlined style={{color:"#F31212"}} />
+              }
+              <CommentOutlined />
+            </div>
+            <div className="desc">
             <p><b>{user.username}:</b> {postData.description}</p>
+            </div>
         </div>
       </div>
     </>

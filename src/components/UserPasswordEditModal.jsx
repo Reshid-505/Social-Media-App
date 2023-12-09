@@ -23,7 +23,7 @@ function UserPasswordEditModal() {
             posts: user.posts,
             fullname: user.fullname,
             bio:user.bio,
-            stories: user.posts,
+            stories: user.stories,
         }
         editUser(user.id,data).then((data)=>{
             setUser((data))
