@@ -21,7 +21,6 @@ function AdminLogin() {
               if(item.username==values.username && item.password==values.password && item.isAdmin){
 
                 setAdmin(item)
-                localStorage.setItem("token",JSON.stringify(item.id))
                 navigate("/admin")
               }else{
                 count++

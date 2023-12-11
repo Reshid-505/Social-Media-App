@@ -109,7 +109,7 @@
       ],
       "requests": [],
       "isAdmin": false,
-      "isVerified": false,
+      "isVerified": true,
       "isPrivate": true,
       "email": "hreshid505@gmail.com",
       "posts": [
@@ -123,32 +123,7 @@
             "1",
             "4"
           ],
-          "comments": [
-            {
-              "id": "6rTR_zkMZyGwkDD1EHK44",
-              "userId": "1",
-              "userName": "Reshid505",
-              "text": "Abby is MotherFucker"
-            },
-            {
-              "id": "wusxdueF8TmZ2wl8XJhYv",
-              "userId": "4",
-              "userName": "Michael",
-              "text": "I Agree"
-            },
-            {
-              "id": "ee9hc4PpUL-sczdM2KNio",
-              "userId": "1",
-              "userName": "Reshid505",
-              "text": "Hitler never die"
-            },
-            {
-              "id": "MVjmJhW5g6KF5fnwIfNVQ",
-              "userId": "4",
-              "userName": "Michael",
-              "text": "i Agree"
-            }
-          ]
+          "comments": []
         }
       ],
       "fullname": "Reshid Huseynov",
@@ -187,7 +162,7 @@
       ],
       "requests": [],
       "isAdmin": false,
-      "isVerified": false,
+      "isVerified": true,
       "isPrivate": false,
       "email": "michael@gmail.com",
       "posts": [
@@ -216,7 +191,7 @@
       "follows": [],
       "requests": [],
       "isAdmin": false,
-      "isVerified": false,
+      "isVerified": true,
       "isPrivate": false,
       "email": "franklin@gmail.com",
       "posts": [],
@@ -233,7 +208,7 @@
       "follows": [],
       "requests": [],
       "isAdmin": false,
-      "isVerified": false,
+      "isVerified": true,
       "isPrivate": false,
       "email": "travor@gmail.com",
       "posts": [],
@@ -250,7 +225,7 @@
       "follows": [],
       "requests": [],
       "isAdmin": false,
-      "isVerified": false,
+      "isVerified": true,
       "isPrivate": false,
       "email": "barney@gmail.com",
       "posts": [],
@@ -259,5 +234,6 @@
       "blocks": [],
       "id": "7"
     }
-  ]
+  ],
+  "verifies": []
 }

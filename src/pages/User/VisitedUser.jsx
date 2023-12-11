@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react"
 import { Button, Row, Col } from "antd"
-import { LockOutlined } from '@ant-design/icons';
+import { LockOutlined, CheckCircleOutlined } from '@ant-design/icons';
 import { editUser, getByIdUser } from "../../services/api/userRequests";
 import { useParams } from "react-router-dom"
 import MainData from "../../context/mainContext";
@@ -141,7 +141,7 @@ function VisitedUser() {
             <img src={visitedUser?.avatar} alt="avatar" />
           </div>
           <div className="info">
-            <h1>{visitedUser?.isPrivate?(<LockOutlined />):null} {visitedUser?.username}</h1> 
+            <h1>{visitedUser?.isPrivate?(<LockOutlined style={{color:"#FCB010"}}  />):null} {visitedUser?.username} {visitedUser?.isVerified && <CheckCircleOutlined style={{color:"#FCB010"}} />} </h1> 
             <div className="stats">
               <div>
                 <h3>Posts</h3>
