@@ -1,0 +1,263 @@
+{
+  "users": [
+    {
+      "username": "Reshid505",
+      "password": "90vo505",
+      "avatar": "https://styles.redditmedia.com/t5_2t7oi/styles/communityIcon_3s9qdbgq51b61.png",
+      "followers": [
+        "2"
+      ],
+      "follows": [
+        "2"
+      ],
+      "requests": [],
+      "isAdmin": true,
+      "isVerified": true,
+      "isPrivate": true,
+      "email": "hreshid2016@gmail.com",
+      "posts": [
+        {
+          "id": "1",
+          "userId": "1",
+          "createdAt": 1702158432607,
+          "image": "https://media.npr.org/assets/img/2023/12/05/gta-6-1--bdd616f1367b30a7d81343e9373e062216efc22a-s1100-c50.jpg",
+          "description": "GTA6 Trailer Poster",
+          "likes": [
+            "2"
+          ],
+          "comments": []
+        },
+        {
+          "id": "2",
+          "userId": "1",
+          "createdAt": 1702158432607,
+          "image": "https://cdn.sortiraparis.com/images/80/66131/981649-gta-6-rockstar-games-officialise-le-jeu-avec-une-premiere-bande-annonce-debut-decembre.jpg",
+          "description": "GTA6 Trailer Poster-2",
+          "likes": [],
+          "comments": []
+        },
+        {
+          "id": "3",
+          "userId": "1",
+          "createdAt": 1702158432607,
+          "image": "https://cdn.vox-cdn.com/thumbor/L5VZerSy9xNTld2m4cDFvGmUCEI=/0x0:3840x2160/1200x800/filters:focal(1613x773:2227x1387)/cdn.vox-cdn.com/uploads/chorus_image/image/72844677/Watch_Trailer_1__Tuesday__December_5_at_9AM_ET_1_24_screenshot.6.jpg",
+          "description": "GTA6 Logo",
+          "likes": [
+            "2"
+          ],
+          "comments": []
+        },
+        {
+          "id": "4",
+          "userId": "1",
+          "createdAt": 1702158432607,
+          "image": "https://cdn1.ntv.com.tr/gorsel/75tsEutbb02iCavD2TIRKg.jpg?width=1000&mode=crop&scale=both",
+          "description": "GTA6 in-game photo",
+          "likes": [],
+          "comments": []
+        },
+        {
+          "id": "5",
+          "userId": "1",
+          "createdAt": 1702159005596,
+          "image": "https://rukminim2.flixcart.com/image/850/1000/poster/j/z/y/medium-poster965-red-dead-redemption-2-2017-game-on-fine-art-original-imaes76xjaxzcdbr.jpeg?q=90",
+          "description": "RDR 2 Poster",
+          "likes": [
+            "2"
+          ],
+          "comments": []
+        },
+        {
+          "id": "6",
+          "userId": "1",
+          "createdAt": 1702159115830,
+          "image": "https://static.printler.com/cache/3/0/f/3/3/9/30f339d317f7f873efbec0bd9deea5f4c5087ee9.jpg",
+          "description": "RDR 2 poster-2",
+          "likes": [
+            "2"
+          ],
+          "comments": []
+        },
+        {
+          "id": "7",
+          "userId": "1",
+          "createdAt": 1702159210085,
+          "image": "https://cdn.europosters.eu/image/750/posters/playstation-last-of-us-i127204.jpg",
+          "description": "The best game of all universe",
+          "likes": [],
+          "comments": []
+        }
+      ],
+      "fullname": "Reshid Huseynov",
+      "bio": "Front-end developer | React developer",
+      "blocks": [],
+      "id": "1"
+    },
+    {
+      "username": "Reshid123",
+      "password": "Reshid123",
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFYwwMVzeidGHolkpxXG8CCg8wn2IbzLrTag&usqp=CAU",
+      "followers": [
+        "1",
+        "4"
+      ],
+      "follows": [
+        "3",
+        "4",
+        "5",
+        "1"
+      ],
+      "requests": [],
+      "isAdmin": false,
+      "isVerified": false,
+      "isPrivate": true,
+      "email": "hreshid505@gmail.com",
+      "posts": [
+        {
+          "id": "1",
+          "userId": "2",
+          "createdAt": 1702159385892,
+          "image": "https://m.media-amazon.com/images/I/71G1RvDnMYL._AC_UF1000,1000_QL80_.jpg",
+          "description": "Second best game in the universe",
+          "likes": [
+            "1",
+            "4"
+          ],
+          "comments": [
+            {
+              "id": "6rTR_zkMZyGwkDD1EHK44",
+              "userId": "1",
+              "userName": "Reshid505",
+              "text": "Abby is MotherFucker"
+            },
+            {
+              "id": "wusxdueF8TmZ2wl8XJhYv",
+              "userId": "4",
+              "userName": "Michael",
+              "text": "I Agree"
+            },
+            {
+              "id": "ee9hc4PpUL-sczdM2KNio",
+              "userId": "1",
+              "userName": "Reshid505",
+              "text": "Hitler never die"
+            },
+            {
+              "id": "MVjmJhW5g6KF5fnwIfNVQ",
+              "userId": "4",
+              "userName": "Michael",
+              "text": "i Agree"
+            }
+          ]
+        }
+      ],
+      "fullname": "Reshid Huseynov",
+      "bio": "Car Adicted | Drift King",
+      "blocks": [],
+      "id": "2"
+    },
+    {
+      "username": "Ramal123",
+      "password": "Ramal123",
+      "avatar": "https://pbs.twimg.com/profile_images/1815864260/lorem-ipsum-logo_400x400.jpeg",
+      "followers": [
+        "2"
+      ],
+      "follows": [],
+      "requests": [],
+      "isAdmin": false,
+      "isVerified": false,
+      "isPrivate": false,
+      "email": "ramal123@gmail.com",
+      "posts": [],
+      "fullname": "Ramal Veliyev",
+      "bio": "Attack Helicopter",
+      "blocks": [],
+      "id": "3"
+    },
+    {
+      "username": "Michael",
+      "password": "Michaelgta5",
+      "avatar": "https://p1.hiclipart.com/preview/974/716/28/grand-theft-auto-v-game-icon-gta-5-8-man-holding-rifle-illustration-png-clipart.jpg",
+      "followers": [
+        "2"
+      ],
+      "follows": [
+        "2"
+      ],
+      "requests": [],
+      "isAdmin": false,
+      "isVerified": false,
+      "isPrivate": false,
+      "email": "michael@gmail.com",
+      "posts": [
+        {
+          "id": "1",
+          "userId": "4",
+          "createdAt": 1702278947833,
+          "image": "https://cdn1.ntv.com.tr/gorsel/gbj0H8kOm0KGaUwh0LystA.jpg?width=952&height=540&mode=both&scale=both",
+          "description": "New place",
+          "likes": [],
+          "comments": []
+        }
+      ],
+      "fullname": "Michael De Santa",
+      "bio": "Criminal",
+      "blocks": [],
+      "id": "4"
+    },
+    {
+      "username": "Franklin",
+      "password": "Franklingta5",
+      "avatar": "https://p1.hiclipart.com/preview/259/578/547/grand-theft-auto-v-game-icon-gta-5-11-grand-theft-auto-5-png-clipart.jpg",
+      "followers": [
+        "2"
+      ],
+      "follows": [],
+      "requests": [],
+      "isAdmin": false,
+      "isVerified": false,
+      "isPrivate": false,
+      "email": "franklin@gmail.com",
+      "posts": [],
+      "fullname": "Franklin Clinton",
+      "bio": "Criminal",
+      "blocks": [],
+      "id": "5"
+    },
+    {
+      "username": "Trevor",
+      "password": "Trevorgta5",
+      "avatar": "https://i1.sndcdn.com/artworks-000483105288-z4hu0d-t500x500.jpg",
+      "followers": [],
+      "follows": [],
+      "requests": [],
+      "isAdmin": false,
+      "isVerified": false,
+      "isPrivate": false,
+      "email": "travor@gmail.com",
+      "posts": [],
+      "fullname": "Trevor Philips",
+      "bio": "Criminal",
+      "blocks": [],
+      "id": "6"
+    },
+    {
+      "username": "Barney",
+      "password": "Barney2005",
+      "avatar": "https://pbs.twimg.com/profile_images/1217116883/barney_stinson_400x400.jpg",
+      "followers": [],
+      "follows": [],
+      "requests": [],
+      "isAdmin": false,
+      "isVerified": false,
+      "isPrivate": false,
+      "email": "barney@gmail.com",
+      "posts": [],
+      "fullname": "Barney Stinson",
+      "bio": "Legen - wait for it - dary | have you met Ted @Ted",
+      "blocks": [],
+      "id": "7"
+    }
+  ]
+}

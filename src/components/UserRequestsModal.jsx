@@ -41,7 +41,7 @@ function UserRequestsModal() {
         posts: user.posts,
         fullname: user.fullname,
         bio:user.bio,
-        stories: user.stories,
+        blocks: user.blocks,
       }
       editUser(user.id,data)
       .then((data)=>{
@@ -65,7 +65,7 @@ function UserRequestsModal() {
         posts: user.posts,
         fullname: user.fullname,
         bio:user.bio,
-        stories: user.stories,
+        blocks: user.blocks,
       }
       getByIdUser(id)
       .then((visitedUser)=>{
@@ -83,7 +83,7 @@ function UserRequestsModal() {
           posts: visitedUser.posts,
           fullname: visitedUser.fullname,
           bio:visitedUser.bio,
-          stories: visitedUser.stories,
+          blocks: visitedUser.blocks,
         }
         editUser(id,data2)
       })

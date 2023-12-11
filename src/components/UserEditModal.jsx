@@ -33,7 +33,7 @@ function UserEditModal() {
                 posts: user.posts,
                 fullname: values.fullname?values.fullname:"",
                 bio:values.bio?values.bio:"",
-                stories: user.stories,
+                blocks: user.blocks,
             }
               editUser(user.id,data).then((data)=>{
                   setUser((data))

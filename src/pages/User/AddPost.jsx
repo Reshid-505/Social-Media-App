@@ -1,9 +1,10 @@
 import { Row, Col, Input, Form, Button } from "antd"
-import Post from "../../components/Post"
+import PostPreview from "../../components/PostPreview"
 import { useContext, useState } from "react"
 import MainData from "../../context/mainContext"
 import { editUser } from "../../services/api/userRequests"
 import { useNavigate } from "react-router-dom"
+import { nanoid } from "nanoid"
 
 function AddPost() {
     let {user,setUser} = useContext(MainData)
@@ -13,7 +14,6 @@ function AddPost() {
     let postData={
         "image": photo,
         "description": desc,
-        "isLiked":false
     }
     const onFinish = () => {
         let date = new Date()
@@ -30,7 +30,7 @@ function AddPost() {
             email: user.email,
             posts: [...user.posts,
                 {
-                    "id": String(user.posts.length+1),
+                    "id": nanoid(),
                     "userId": user.id,
                     "createdAt": date.getTime(),
                     "image": photo,
@@ -40,7 +40,7 @@ function AddPost() {
                   },],
             fullname: user.fullname,
             bio:user.bio,
-            stories: user.stories,
+            blocks: user.blocks,
         }
         editUser(user.id,data).then((data)=>{
             setUser(data)
@@ -54,7 +54,7 @@ function AddPost() {
   return (
     <>
         <Row>
-            <Col span={12}>
+            <Col xl={12} xs={24}>
             <Form
                 name="basic"
                 labelCol={{
@@ -109,8 +109,8 @@ function AddPost() {
                 </Form.Item>
             </Form>
             </Col>
-            <Col style={{display:"flex",alignItems:"center",justifyContent:"center"}} span={12}>
-                <Post postData={postData} />
+            <Col style={{display:"flex",alignItems:"center",justifyContent:"center"}} xl={12} xs={24}>
+                <PostPreview postData={postData} />
             </Col>
         </Row> 
     </>

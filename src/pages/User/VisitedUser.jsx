@@ -41,7 +41,7 @@ function VisitedUser() {
           posts: visitedUser.posts,
           fullname: visitedUser.fullname,
           bio:visitedUser.bio,
-          stories: visitedUser.posts,
+          blocks: visitedUser.blocks,
         }
         editUser(visitedUser.id,data)
         .then(data=>{
@@ -62,7 +62,7 @@ function VisitedUser() {
           posts: visitedUser.posts,
           fullname: visitedUser.fullname,
           bio:visitedUser.bio,
-          stories: visitedUser.posts,
+          blocks: visitedUser.blocks,
         }
         let data2={
           username: user.username,
@@ -78,7 +78,7 @@ function VisitedUser() {
           posts: user.posts,
           fullname: user.fullname,
           bio:user.bio,
-          stories: user.posts,
+          blocks: user.blocks,
         }
         editUser(visitedUser.id,data)
         .then(data=>{
@@ -104,7 +104,7 @@ function VisitedUser() {
         posts: visitedUser.posts,
         fullname: visitedUser.fullname,
         bio:visitedUser.bio,
-        stories: visitedUser.posts,
+        blocks: visitedUser.blocks,
       }
       let data2={
         username: user.username,
@@ -120,7 +120,7 @@ function VisitedUser() {
         posts: user.posts,
         fullname: user.fullname,
         bio:user.bio,
-        stories: user.posts,
+        blocks: user.blocks,
       }
       editUser(visitedUser.id,data)
       .then(data=>{
@@ -176,7 +176,7 @@ function VisitedUser() {
         {!visitedUser.isPrivate || user?.follows?.includes(visitedUser.id) && 
         <Row style={{width:"70%",margin:"0 auto 50px"}}>
           {visitedUser?.posts?.map(item=>
-            <Col span={8} key={item.id}><img onClick={()=>{setPost(item);showPostModal()}} style={{width:"100%",aspectRatio:"1/1",objectFit:"cover"}} src={item.image} alt="post" /></Col>  
+            <Col md={8} sm={12} xs={24} key={item.id}><img onClick={()=>{setPost(item);showPostModal()}} style={{width:"100%",aspectRatio:"1/1",objectFit:"cover"}} src={item.image} alt="post" /></Col>  
           )}
         </Row>
         }

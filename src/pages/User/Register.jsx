@@ -40,7 +40,7 @@ function Register() {
                 posts: [],
                 fullname: values.fullname?values.fullname:"",
                 bio:values.bio?values.bio:"",
-                stories: [],
+                blocks: [],
             }
               addUser(data).then(()=>{
                   toast.success("your account is ready please login")

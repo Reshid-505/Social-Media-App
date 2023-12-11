@@ -6,6 +6,9 @@ import { getByIdUser } from "./services/api/userRequests"
 
 function App() {
   let router = createBrowserRouter(ROUTES)
+  let [admin,setAdmin] = useState({})
+  let [postCommentData,setPostCommentData] = useState({})
+  let [postCommentUser,setPostCommentUser] = useState({})
   let [user,setUser] = useState({})
   let [post,setPost] = useState({})
   let [token,setToken] = useState("")
@@ -13,6 +16,7 @@ function App() {
   const [isPostModalOpen, setIsPostModalOpen] = useState(false);
   const [isEditPasswordModalOpen, setIsEditPasswordModalOpen] = useState(false);
   const [isRequestsModalOpen, setIsRequestsModalOpen] = useState(false);
+  const [isCommentModalOpen, setIsCommentModalOpen] = useState(false);
   useEffect(()=>{
     if(JSON.parse(localStorage.getItem("token"))){
       setToken(JSON.parse(localStorage.getItem("token")))
@@ -73,18 +77,36 @@ function App() {
   const handlePostCancel = () => {
     setIsPostModalOpen(false);
   };
+  const showCommentModal = () => {
+    setIsCommentModalOpen(true);
+  };
+
+  const handleCommentOk = () => {
+    setIsCommentModalOpen(false);
+  };
+
+  const handleCommentCancel = () => {
+    setIsCommentModalOpen(false);
+  };
   //#endregion
   let data={
     user,
     setUser,
+    admin,
+    setAdmin,
     post,
     setPost,
     token,
     setToken,
+    postCommentData,
+    setPostCommentData,
+    postCommentUser,
+    setPostCommentUser,
     isPostModalOpen,
     isEditUserModalOpen,
     isEditPasswordModalOpen,
     isRequestsModalOpen,
+    isCommentModalOpen,
     showEditModal,
     handleEditCancel,
     handleEditOk,
@@ -96,7 +118,10 @@ function App() {
     handleRequestsOk,
     showPostModal,
     handlePostCancel,
-    handlePostOk
+    handlePostOk,
+    showCommentModal,
+    handleCommentCancel,
+    handleCommentOk,
   }
   return (
     <MainData.Provider value={data}>

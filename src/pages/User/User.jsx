@@ -54,7 +54,7 @@ function User() {
         </div>
         <Row style={{width:"70%",margin:"0 auto 50px"}}>
           {user?.posts?.map(item=>
-            <Col span={8} key={item.id}><img onClick={()=>{setPost(item);showPostModal();console.log(item)}} style={{width:"100%",aspectRatio:"1/1",objectFit:"cover"}} src={item.image} alt="post" /></Col>  
+            <Col md={8} sm={12} xs={24} key={item.id}><img onClick={()=>{setPost(item);showPostModal();console.log(item)}} style={{width:"100%",aspectRatio:"1/1",objectFit:"cover"}} src={item.image} alt="post" /></Col>  
           )}
         </Row>
       </div>

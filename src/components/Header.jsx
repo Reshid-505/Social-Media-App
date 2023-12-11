@@ -3,7 +3,7 @@ import { useContext, useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import MainData from "../context/mainContext"
 import { getAllUsers } from "../services/api/userRequests"
-import { PlusSquareOutlined } from '@ant-design/icons';
+import { PlusSquareOutlined, HomeOutlined } from '@ant-design/icons';
 function Header() {
   let {user,token,setUser,setToken} = useContext(MainData)
   let [users,setUsers] = useState([])
@@ -45,6 +45,9 @@ function Header() {
                   </>
                 ):
                 (<> 
+                    <Link style={{color:"#FCB010"}} to="/feed">
+                    <HomeOutlined style={{height:"32px", fontSize:"32px"}} />
+                    </Link>
                     <Link to="/">
                         {/* <Button style={{background:"#FCB010",borderColor:"#FCB010",color:"#212529"}} >{user?.username}</Button> */}
                         <img src={user?.avatar} alt="avatar" style={{width:"32px",height:"32px",borderRadius:"50%",border:"2px solid #FCB010"}} />
